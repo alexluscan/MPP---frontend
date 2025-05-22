@@ -2,10 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'standalone',
-  swcMinify: true,
-  experimental: {
-    optimizeCss: true
-  },
   webpack: (config) => {
     config.resolve.fallback = {
       ...config.resolve.fallback,
@@ -17,6 +13,9 @@ const nextConfig = {
     };
     return config;
   },
+  experimental: {
+    optimizeCss: true
+  }
 }
 
 module.exports = nextConfig 
