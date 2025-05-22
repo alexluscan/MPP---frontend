@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { Product, CreateProductRequest, ProductQuery } from '../types/product';
+import { Product as ProductType, CreateProductRequest, ProductQuery } from '../types/product';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
 
-export const getProducts = async (query?: ProductQuery): Promise<Product[]> => {
+export const getProducts = async (query?: ProductQuery): Promise<ProductType[]> => {
     const token = localStorage.getItem('token');
     const response = await axios.get(`${API_URL}/products`, {
         params: query,
@@ -14,7 +14,7 @@ export const getProducts = async (query?: ProductQuery): Promise<Product[]> => {
     return response.data;
 };
 
-export const createProduct = async (product: CreateProductRequest): Promise<Product> => {
+export const createProduct = async (product: CreateProductRequest): Promise<ProductType> => {
     const token = localStorage.getItem('token');
     const response = await axios.post(`${API_URL}/products`, product, {
         headers: {
@@ -24,7 +24,7 @@ export const createProduct = async (product: CreateProductRequest): Promise<Prod
     return response.data;
 };
 
-export const updateProduct = async (id: number, product: CreateProductRequest): Promise<Product> => {
+export const updateProduct = async (id: number, product: CreateProductRequest): Promise<ProductType> => {
     const token = localStorage.getItem('token');
     const response = await axios.put(`${API_URL}/products/${id}`, product, {
         headers: {
