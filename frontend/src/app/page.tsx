@@ -131,7 +131,7 @@ export default function Home() {
     try {
       console.log('fetchProducts called, user:', user);
       if (user && user.id) {
-        const url = `http://localhost:3001/api/get/products/user/${user.id}`;
+        const url = `https://mpp-backend-1-f82n.onrender.com/api/get/products/user/${user.id}`;
         console.log('Fetching from:', url);
         const data = await productApi.getByUserId(user.id, filters);
         console.log('Fetched products:', data);
@@ -159,7 +159,7 @@ export default function Home() {
 
   // Fetch categories on mount
   useEffect(() => {
-    fetch('http://localhost:3001/api/get/categories')
+    fetch('https://mpp-backend-1-f82n.onrender.com/api/get/categories')
       .then(res => res.json())
       .then(data => {
         const mapped = data.map((cat: any) => ({

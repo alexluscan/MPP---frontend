@@ -3,7 +3,7 @@
 import { useNetworkStatus } from './networkStatus';
 
 const STORAGE_KEY = 'offline_operations';
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = 'https://mpp-backend-1-f82n.onrender.com/api';
 
 interface ProductData {
   id?: number;

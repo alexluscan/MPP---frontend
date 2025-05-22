@@ -8,7 +8,7 @@ services:
     startCommand: npm start
     envVars:
       - key: NEXT_PUBLIC_API_URL
-        sync: false  # You'll set this to your backend URL
+        value: https://mpp-backend-1-f82n.onrender.com
       - key: NODE_ENV
         value: production
     healthCheckPath: /api/health  # Next.js API route for health check

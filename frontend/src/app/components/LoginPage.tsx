@@ -9,7 +9,7 @@ export default function LoginPage({ onLogin }: { onLogin: (user: any) => void })
     e.preventDefault();
     setError('');
     try {
-      const res = await fetch('http://localhost:3001/api/login', {
+      const res = await fetch('https://mpp-backend-1-f82n.onrender.com/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),

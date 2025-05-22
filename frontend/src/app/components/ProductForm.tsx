@@ -35,7 +35,7 @@ export default function ProductForm({ product, onSubmit, onCancel, userId }: Pro
   console.log('ProductForm rendered');
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/get/categories')
+    fetch('https://mpp-backend-1-f82n.onrender.com/api/get/categories')
       .then(res => {
         if (!res.ok) {
           console.error('Failed to fetch categories:', res.status, res.statusText);

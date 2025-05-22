@@ -1,6 +1,6 @@
 import { Product, CreateProductRequest, ProductQuery } from '../types/product';
 
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = 'https://mpp-backend-1-f82n.onrender.com/api';
 const MAX_RETRIES = 3;
 const RETRY_DELAY = 1000; // 1 second
 
