@@ -11,7 +11,7 @@ import ProductCard from './components/ProductCard';
 import StatusIndicator from './components/StatusIndicator';
 import Statistics from './components/Statistics';
 import { api } from '@/services/api';
-import mockProducts from './mockProducts';
+import { mockProducts } from './mockProducts';
 import { syncWithServer } from '@/services/localStorage';
 import LoginPage from './components/LoginPage';
 
@@ -91,8 +91,8 @@ export default function Home() {
 
   // On mount, always reset local storage to the static mockProducts if empty or on restart
   useEffect(() => {
-    let localProducts = loadProductsFromLocalStorage();
-    if (!localProducts || !Array.isArray(localProducts) || localProducts.length !== mockProducts.length) {
+    let localProducts = loadProductsFromLocalStorage() || [];
+    if (!Array.isArray(localProducts) || localProducts.length !== mockProducts.length) {
       // Add category_name to mockProducts for type compatibility
       const fixedMockProducts = mockProducts.map(p => ({ ...p, category_name: p.category || '' }));
       saveProductsToLocalStorage(fixedMockProducts);
